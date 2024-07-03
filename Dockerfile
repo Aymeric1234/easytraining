@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER aymeric1234 (aymeric-ivan.mbenda@makiti.dee)
+MAINTAINER aymeric1234 (aymeric-ivan.mbenda@makiti.de)
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nginx git
 EXPOSE 80
