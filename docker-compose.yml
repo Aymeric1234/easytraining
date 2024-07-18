@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:apache
+    ports:
+      - "80:80"
+    environment:
+      USERNAME: toto
+      PASSWORD: python
+    volumes:
+      - ./website:/var/www/html
+    depends_on:
+      - api
+    networks:
+      - student_network
+
+  api:
+    image: student_list
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./simple_api/student_age.json:/data/student_age.json
+    networks:
+      - student_network
+
+networks:
+  student_network:
+    driver: bridge
